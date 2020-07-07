@@ -22,11 +22,9 @@ module.exports = {
     let url = '';
 
     if (type === 'quotes') { url = `${host}${path}Quotes?$filter=Sell_to_Customer_No eq '${id}'&$orderby=No desc&$top=15`; };
-    if (type === 'quote') { url = `${host}${path}Quotes(Document_Type='Quote',No='${id}')`; };
-    if (type === 'quotelines') { url = `${host}${path}Quotes(Document_Type='Quote',No='${id}')/QuotesSalesLines`; };
+    if (type === 'quote') { url = `${host}${path}Quotes(Document_Type='Quote',No='${id}')?$expand=QuotesSalesLines`; };
     if (type === 'orders') { url = `${host}${path}SalesOrder?$filter=Sell_to_Customer_No eq '${id}'&$orderby=No desc&$top=15`; };
-    if (type === 'order') { url = `${host}${path}SalesOrder(Document_Type='Order',No='${id}')`; };
-    if (type === 'orderlines') { url = `${host}${path}SalesOrder(Document_Type='Order',No='${id}')/SalesOrderSalesLines`; };
+    if (type === 'order') { url = `${host}${path}SalesOrder(Document_Type='Order',No='${id}')?$expand=SalesOrderSalesLines`; };
     if (type === 'customer') { url = `${host}${path}Customers('${id}')`; }
     if (type === 'invoices') { url = `${host}${path}InvoiceList?$filter=Sell_to_Customer_No eq '${id}'&$orderby=No desc&$top=15`; }
 

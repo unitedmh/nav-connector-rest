@@ -76,11 +76,8 @@ getAJAX().then(async (data) => {
 // Get all Quotes from Customer #
 ${API_URL}quotes/{Customer_Number};
 
-// Get Quote Header
+// Get Quote w/Lines
 ${API_URL}quote/{Quote_No};
-
-// Get Quote Lines
-${API_URL}quotelines/{Quote_No};
 ```
 
 ```javascript
@@ -88,12 +85,11 @@ ${API_URL}quotelines/{Quote_No};
 // Get all Sales Orders from Customer #
 ${API_URL}orders/{Customer_Number};
 
-// Get Sales Order Header
+// Get Sales Order w/Lines
 ${API_URL}order/{Order_No};
-
-// Get Sales Order Lines
-${API_URL}orderlines/{Order_No};
 ```
+Updated to ODataV4 with `?$expand=` method.
+You can change these Endpoints in `route/api.js`.
 
 ```javascript
 /************* INVOICES *************/
